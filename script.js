@@ -5,6 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
         projectGrid.classList.add('project-flex');
     }
 
+    // Apply orange->black gradient background to project cards at runtime
+    const projectItems = document.querySelectorAll('.project-item');
+    projectItems.forEach(item => {
+        // set gradient background and white text
+        item.style.background = 'linear-gradient(180deg, #FF8C00 0%, #000000 100%)';
+        item.style.color = '#ffffff';
+        item.style.position = item.style.position || 'relative';
+
+        // ensure inner text container uses white color and proper layout
+        const text = item.querySelector('.project-text');
+        if (text) {
+            text.style.color = '#ffffff';
+            text.style.background = 'linear-gradient(180deg, rgba(255,140,0,0) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.65) 100%)';
+            text.style.padding = text.style.padding || '18px';
+            text.style.boxSizing = 'border-box';
+        }
+
+        // style links inside project text to be visible on dark background
+        const links = item.querySelectorAll('a');
+        links.forEach(a => {
+            a.style.color = '#ffffff';
+            a.style.textDecoration = 'none';
+            a.style.fontWeight = '700';
+        });
+    });
+
     // Handle layout toggle button
     const layoutToggle = document.getElementById('layout-toggle');
     const body = document.body;
