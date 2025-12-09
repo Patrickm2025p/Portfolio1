@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to bottom, #0000FF, #000000); /* Blue to Black Gradient */
+        background: none;
+        background-color: #f4f4f4;
         font-family: Arial, sans-serif;
         overflow: hidden; /* Hide scrollbar initially */
     `;
