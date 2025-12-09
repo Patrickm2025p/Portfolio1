@@ -32,29 +32,32 @@ document.addEventListener('DOMContentLoaded', () => {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
         z-index: 100;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: background-color 0.3s ease, transform 0.3s ease;
+        display: block;
+        margin: 20px auto;
     `;
 
     visitSiteButton.onmouseover = () => {
         visitSiteButton.style.backgroundColor = '#f0f0f0';
-        visitSiteButton.style.transform = 'translate(-50%, -50%) scale(1.05)';
+        visitSiteButton.style.transform = 'scale(1.05)';
     };
     visitSiteButton.onmouseout = () => {
         visitSiteButton.style.backgroundColor = 'white';
-        visitSiteButton.style.transform = 'translate(-50%, -50%) scale(1)';
+        visitSiteButton.style.transform = 'scale(1)';
     };
 
-    body.appendChild(visitSiteButton);
+    const heroSection = document.querySelector('#hero .container');
+    if (heroSection) {
+        heroSection.appendChild(visitSiteButton);
+    } else {
+        body.appendChild(visitSiteButton);
+    }
 
     body.style.cssText = `
         margin: 0;
-        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
