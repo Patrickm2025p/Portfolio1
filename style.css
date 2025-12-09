@@ -233,3 +233,35 @@ body {
                     width: 100%; /* full column width */
                     margin-bottom: 20px;
                 }
+
+                /* Flex rows layout for body content */
+                /* Add `class="rows-layout"` to <body> to enable */
+                body.rows-layout {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 24px;
+                    align-items: flex-start;
+                    justify-content: center;
+                    padding: 20px 0;
+                }
+                /* Ensure each major block becomes a full-width row (stacked),
+                   but the layout uses flex so you can later adjust widths easily. */
+                body.rows-layout > * {
+                    flex: 1 1 100%;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                    margin-bottom: 20px;
+                }
+                @media (min-width: 1100px) {
+                    /* Example: make portfolio items share a row on wide screens */
+                    body.rows-layout .project-grid {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                    }
+                    body.rows-layout .project-grid .project-item {
+                        flex: 1 1 300px;
+                        max-width: 400px;
+                    }
+                }
