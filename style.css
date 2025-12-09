@@ -47,9 +47,10 @@ body {
         }
         #hero {
             background: #e2e2e2;
-        /* Use photome.jpg as the background for project cards */
+        /* Use photome.jpg as the background for project cards with an orange→black gradient overlay */
         .project-item {
-            background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('photome.jpg');
+            background-image: linear-gradient(180deg, rgba(255,140,0,0.45) 0%, rgba(0,0,0,0.85) 100%), url('photome.jpg');
+            background-blend-mode: overlay;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
