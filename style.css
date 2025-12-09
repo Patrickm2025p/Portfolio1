@@ -18,7 +18,8 @@ body {
         header {
             background-color: #333;
             color: #fff;
-            padding: 0.5rem 0; /* Reduce height to half */
+            padding-top: 0; /* Removed top padding */
+            padding-bottom: 0.5rem; /* keep small bottom padding */
             text-align: center;
             position: sticky;
             top: 0;
@@ -41,7 +42,7 @@ body {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
         }
         #hero {
