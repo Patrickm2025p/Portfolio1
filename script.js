@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Replace CSS grid layout for the project grid with a flex row layout
+    const projectGrid = document.querySelector('.project-grid');
+    if (projectGrid) {
+        projectGrid.style.display = 'flex';
+        projectGrid.style.flexDirection = 'row';
+        projectGrid.style.flexWrap = 'wrap';
+        projectGrid.style.gap = '20px';
+
+        // Make each project item responsive using flex-basis
+        const projectItems = projectGrid.querySelectorAll('.project-item');
+        projectItems.forEach(item => {
+            item.style.flex = '1 1 300px';
+            item.style.maxWidth = '400px';
+            item.style.boxSizing = 'border-box';
+            // keep visual spacing consistent
+            item.style.margin = '0';
+        });
+    }
     const body = document.body;
     const visitSiteButton = document.createElement('button');
     visitSiteButton.textContent = 'Visit My Site';
