@@ -7,6 +7,30 @@ body {
             line-height: 1.6;
             text-align: center;
         }
+        /* Title decoration using #723e00 */
+        h1, h2, h3 {
+            color: #723e00;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            position: relative;
+        }
+        /* small underline bar centered under headings */
+        h1::after, h2::after, h3::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #723e00;
+            margin: 8px auto 0;
+            border-radius: 2px;
+            opacity: 0.95;
+        }
+        /* slightly larger bar for main hero h1 */
+        #hero h1::after {
+            width: 90px;
+            height: 6px;
+            margin-top: 12px;
+        }
         /* Brown text for names */
         b {
             color: #8B4513;
