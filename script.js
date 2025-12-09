@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.overflow = 'auto'; // Allow scrolling if content overflows
         body.style.background = 'none'; // Remove gradient for content
         body.style.backgroundColor = '#f0f0f0'; // A light background for the content
+        body.style.height = 'auto'; // Adjust height for content
+        body.classList.add('rows-layout'); // Preserve rows-layout
+        body.classList.remove('columns-layout'); // Remove columns-layout
 
         const frames = ['Home', 'Menu', 'CV', 'Blog'];
         frames.forEach(frameText => {
