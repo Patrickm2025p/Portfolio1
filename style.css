@@ -199,6 +199,53 @@ body {
         .button:hover .arrow {
             animation: arrowBounce 1s ease-in-out infinite;
         }
+        /* Layout toggle button */
+        .layout-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 200;
+            box-shadow: 
+                0 8px 15px rgba(0, 123, 255, 0.4),
+                0 12px 25px rgba(0, 86, 179, 0.3),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.2),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+        }
+        .layout-toggle:hover {
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            box-shadow: 
+                0 15px 30px rgba(0, 123, 255, 0.5),
+                0 20px 40px rgba(0, 86, 179, 0.4),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        .layout-toggle:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 5px 10px rgba(0, 123, 255, 0.3),
+                0 8px 15px rgba(0, 86, 179, 0.2),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.2),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+        }
+        @media (max-width: 600px) {
+            .layout-toggle {
+                padding: 8px 16px;
+                font-size: 0.9em;
+                top: 10px;
+                right: 10px;
+            }
+        }
                 /* Columns layout for body content */
                 /* Add `class="columns-layout"` to <body> to enable */
                 body.columns-layout {

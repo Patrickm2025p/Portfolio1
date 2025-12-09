@@ -4,7 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectGrid) {
         projectGrid.classList.add('project-flex');
     }
+
+    // Handle layout toggle button
+    const layoutToggle = document.getElementById('layout-toggle');
     const body = document.body;
+    if (layoutToggle) {
+        layoutToggle.addEventListener('click', () => {
+            const isRows = body.classList.contains('rows-layout');
+            if (isRows) {
+                body.classList.remove('rows-layout');
+                body.classList.add('columns-layout');
+                layoutToggle.textContent = '≡ Columns';
+            } else {
+                body.classList.remove('columns-layout');
+                body.classList.add('rows-layout');
+                layoutToggle.textContent = '≡ Rows';
+            }
+        });
+    }
     const visitSiteButton = document.createElement('button');
     visitSiteButton.textContent = 'Visit My Site';
     visitSiteButton.style.cssText = `
