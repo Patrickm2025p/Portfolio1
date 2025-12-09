@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Set skill buttons color to #01181e and ensure white text for contrast
+    // Set skill buttons background to #723e00 and ensure white text for contrast
     const skillButtons = document.querySelectorAll('.skill-list li');
     skillButtons.forEach(btn => {
-        btn.style.backgroundColor = '#01181e';
+        btn.style.backgroundColor = '#723e00';
         btn.style.color = '#ffffff';
         btn.style.border = 'none';
     });
