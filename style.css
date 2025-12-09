@@ -47,22 +47,56 @@ body {
         }
         #hero {
             background: #e2e2e2;
-            padding: 50px 0;
-            text-align: center;
+        /* Use photome.jpg as the background for project cards */
+        .project-item {
+            background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('photome.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
         }
-        #hero h1 {
-            margin-bottom: 10px;
+
+        /* Hide the inline <img> now that we use a background image */
+        .project-item img {
+            display: none;
         }
-        #about, #skills, #portfolio, #contact {
-            background: #fff;
-            padding: 30px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        /* Push the text block to the bottom of the card with a semi-opaque panel */
+        .project-text {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            align-items: flex-start;
+            gap: 8px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.65) 100%);
+            padding: 18px;
+            box-sizing: border-box;
+            border-radius: 0 0 8px 8px;
         }
-        /* Smaller font for contact section */
-        #contact {
+
+        .project-text h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.25em;
+        }
+        .project-text p {
+            margin: 0;
+            color: rgba(255,255,255,0.9);
             font-size: 0.95em;
+        }
+        .project-text a {
+            color: #ffd; /* light accent */
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 6px;
+            align-self: flex-end;
+            background: rgba(255,255,255,0.08);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
         }
         #contact p {
             margin: 5px 0;
