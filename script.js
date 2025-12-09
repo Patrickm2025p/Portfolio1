@@ -31,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Set skill buttons color to #01181e and ensure white text for contrast
+    const skillButtons = document.querySelectorAll('.skill-list li');
+    skillButtons.forEach(btn => {
+        btn.style.backgroundColor = '#01181e';
+        btn.style.color = '#ffffff';
+        btn.style.border = 'none';
+    });
+
     // Handle layout toggle button
     const layoutToggle = document.getElementById('layout-toggle');
     const body = document.body;
