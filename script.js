@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         background: none;
         background-color: #f4f4f4;
         font-family: Arial, sans-serif;
-        overflow: hidden; /* Hide scrollbar initially */
+        overflow: auto; /* Allow scrolling */
     `;
 
     visitSiteButton.addEventListener('click', () => {
