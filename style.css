@@ -164,3 +164,21 @@ body {
                 inset -2px -2px 5px rgba(0, 0, 0, 0.2),
                 inset 2px 2px 5px rgba(255, 255, 255, 0.3);
         }
+        /* Animated arrow in button */
+        .arrow {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1.2em;
+            animation: arrowBounce 1.5s ease-in-out infinite;
+        }
+        @keyframes arrowBounce {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(8px);
+            }
+        }
+        .button:hover .arrow {
+            animation: arrowBounce 1s ease-in-out infinite;
+        }
