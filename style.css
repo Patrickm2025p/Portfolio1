@@ -199,3 +199,37 @@ body {
         .button:hover .arrow {
             animation: arrowBounce 1s ease-in-out infinite;
         }
+                /* Columns layout for body content */
+                /* Add `class="columns-layout"` to <body> to enable */
+                body.columns-layout {
+                    -webkit-column-count: 2;
+                    -moz-column-count: 2;
+                    column-count: 2;
+                    -webkit-column-gap: 40px;
+                    -moz-column-gap: 40px;
+                    column-gap: 40px;
+                    padding: 20px 0;
+                }
+                @media (max-width: 900px) {
+                    body.columns-layout {
+                        -webkit-column-count: 1;
+                        -moz-column-count: 1;
+                        column-count: 1;
+                    }
+                }
+                /* Prevent major blocks from being split across columns */
+                body.columns-layout .container,
+                body.columns-layout #hero,
+                body.columns-layout #about,
+                body.columns-layout #skills,
+                body.columns-layout #portfolio,
+                body.columns-layout #contact,
+                body.columns-layout .project-item {
+                    -webkit-column-break-inside: avoid;
+                    -moz-column-break-inside: avoid;
+                    column-break-inside: avoid;
+                    break-inside: avoid-column;
+                    display: inline-block; /* Treat blocks as column children */
+                    width: 100%; /* full column width */
+                    margin-bottom: 20px;
+                }
