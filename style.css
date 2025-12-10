@@ -13,23 +13,23 @@ body {
             margin: 0 0 12px 0;
             font-weight: 700;
             position: relative;
+            display: inline-block; /* make underline match text width */
         }
-        /* small underline bar centered under headings */
+        /* small underline bar sized to heading width */
         h1::after, h2::after, h3::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 100%; /* match the heading's inline width */
             height: 4px;
             background: #723e00;
-            margin: 8px auto 0;
+            margin: 8px 0 0;
             border-radius: 2px;
             opacity: 0.95;
         }
         /* slightly larger bar for main hero h1 */
+        /* remove decoration under hero main heading */
         #hero h1::after {
-            width: 90px;
-            height: 6px;
-            margin-top: 12px;
+            display: none;
         }
         /* Brown text for names */
         b {
@@ -38,17 +38,6 @@ body {
         b:hover {
             color: #007bff;
             transition: color 0.3s ease;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding-top: 0; /* Removed top padding */
-            padding-bottom: 0.5rem; /* keep small bottom padding */
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         nav ul {
             list-style: none;
@@ -66,11 +55,11 @@ body {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding: 10px 0;
             text-align: center;
         }
         #hero {
             background: #e2e2e2;
+        }
         /* Project cards use an orange (top) -> black (bottom) gradient background */
         .project-item {
             background: linear-gradient(180deg, #FF8C00 0%, #000000 100%);
@@ -102,6 +91,17 @@ body {
             margin: 0;
             color: #fff;
             font-size: 1.25em;
+        }
+        /* Make project title underline white to match title color */
+        .project-text h3::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: #ffffff;
+            margin: 6px 0 0;
+            border-radius: 2px;
+            opacity: 0.95;
         }
         .project-text p {
             margin: 0;
@@ -178,12 +178,15 @@ body {
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
+            margin: 0 auto;
+            width: fit-content;
         }
         .skill-list li {
-            background: #007bff;
+            background: #723e00;
             color: #fff;
             padding: 8px 15px;
             border-radius: 5px;
+            border: none;
         }
         .project-grid {
             display: grid;
@@ -214,11 +217,11 @@ body {
             margin: 0;
         }
         .project-item {
-            border: 1px solid #ddd;
-            padding: 15px;
+            background: linear-gradient(180deg, #FF8C00 0%, #000000 100%);
+            padding: 0; /* Padding is handled by project-text now */
             border-radius: 8px;
-            text-align: center;
             min-height: 520px; /* ensure item is taller to accommodate doubled image */
+            border: none; /* remove border, gradient is enough */
         }
         .project-item img {
             max-width: 100%;
@@ -320,16 +323,32 @@ body {
         }
         /* Layout toggle button - positioned in navbar */
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         header .container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 100%;
+            justify-content: space-between; /* Aligns logo to left and nav to right */
+            width: 80%; /* Match main .container width */
+            margin: 0 auto; /* Center the container */
+            padding: 0; /* keep spacing consistent */
+        }
+        /* Logo sizing so it aligns visually with nav and toggle */
+        header .container img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+        /* Logo class with padding */
+        .logo {
+            margin-left: 20px;
         }
         .layout-toggle {
             position: relative;
@@ -338,7 +357,7 @@ body {
             background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 40px;
             border-radius: 50px;
             font-size: 1em;
             font-weight: bold;
@@ -350,8 +369,7 @@ body {
                 inset -2px -2px 5px rgba(0, 0, 0, 0.2),
                 inset 2px 2px 5px rgba(255, 255, 255, 0.3);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            outline: none;
-            margin-left: 20px;
+            outline: none;            
         }
         .layout-toggle:hover {
             background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
@@ -376,6 +394,31 @@ body {
                 font-size: 0.9em;
                 margin-left: 10px;
             }
+        }
+        /* Ensure nav links align with the same left margin as main content */
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        header nav ul {
+            display: flex;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        header nav ul li {
+            margin: 0;
+        }
+        /* Nav links container - flex row with right margin */
+        .nav-links-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 60px;
+            margin-left: 0; /* No longer needed with space-between */
+            margin-right: 0; /* No longer needed */
         }
                 /* Columns layout for body content */
                 /* Add `class="columns-layout"` to <body> to enable */

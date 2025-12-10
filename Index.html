@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body class="rows-layout">
     <header>
         <div class="container">
-            <img src="Logo.webp" alt="Logo">
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="layout-toggle" class="layout-toggle" title="Toggle between rows and columns layout">
-                ≡ Rows
-            </button>
+            <img src="Logo.webp" alt="Logo" class="logo">
+            <div class="nav-links-container">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="layoutToggle" class="layout-toggle">Rows</button>
+            </div>
+
         </div>
     </header>
 
@@ -35,8 +39,11 @@
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Welcome to my portfolio! I'm a [Your Profession/Role] with X years of experience in [Your Industry/Field]. I specialize in [Key areas like web development, data science, design, etc.] and love to build innovative solutions.</p>
-        <p>My journey in tech began with [brief story or motivation]. I'm always eager to learn new technologies and collaborate on exciting projects.</p>
+        <p>Welcome to my portfolio! I'm a [Your Profession/Role] with X years of experience in [Your Industry/Field]. I
+            specialize in [Key areas like web development, data science, design, etc.] and love to build innovative
+            solutions.</p>
+        <p>My journey in tech began with [brief story or motivation]. I'm always eager to learn new technologies and
+            collaborate on exciting projects.</p>
     </section>
 
     <section id="skills" class="container">
@@ -45,11 +52,10 @@
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
-            <li>React</li>
-            <li>Python</li>
-            <li>SQL</li>
+            <li>Tailwind</li>
             <li>Git</li>
-            <li>[Another Skill]</li>
+            <li>Web design</li>
+            <li>Graphic design</li>
         </ul>
     </section>
 
@@ -57,7 +63,7 @@
         <h2>Portfolio</h2>
         <div class="project-grid">
             <div class="project-item">
-                <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1">
+                <img src="IMG-20251102-WA0016.jpg" alt="Project 1">
                 <div class="project-text">
                     <h3>Project Title 1</h3>
                     <p>A brief description of Project 1, highlighting its purpose and technologies used.</p>
@@ -65,7 +71,7 @@
                 </div>
             </div>
             <div class="project-item">
-                <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">
+                <img src="photome.jpg" alt="Project 2">
                 <div class="project-text">
                     <h3>Project Title 2</h3>
                     <p>A brief description of Project 2, highlighting its purpose and technologies used.</p>
@@ -73,7 +79,7 @@
                 </div>
             </div>
             <div class="project-item">
-                <img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3">
+                <img src="Satelite world data view.jpg" alt="Project 3">
                 <div class="project-text">
                     <h3>Project Title 3</h3>
                     <p>A brief description of Project 3, highlighting its purpose and technologies used.</p>
@@ -88,7 +94,8 @@
         <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
         <div class="contact-links">
             <p>Email: <a href="mailto:ptm2020pat@gmail.com">ptm2020pat@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+            </p>
             <p>GitHub: <a href="http://bit.ly/4rLhXU7" target="_blank">github.com/Patrickm</a></p>
         </div>
     </section>
@@ -99,4 +106,5 @@
         </div>
     </footer>
 </body>
+
 </html>
